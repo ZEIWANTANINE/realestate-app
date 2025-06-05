@@ -1,0 +1,78 @@
+import { Entity, Column, JoinColumn, ManyToOne, OneToMany } from 'typeorm'
+import { BaseEntity } from './base.entity'
+
+// import { RoleEntity } from './role.entity'
+
+@Entity('properties')
+export class PropertiesEntity extends BaseEntity {
+  @Column({ type: 'nvarchar', length: 255 })
+  title: string
+
+  @Column({ type: 'nvarchar', length: 255, unique: true })
+  description: string
+
+  @Column({ type: 'nvarchar', length: 10 })
+  license_number: string
+
+  @Column({ type: 'nvarchar', length: 255, nullable: true })
+  address: string
+
+  @Column({ type: 'decimal', precision: 15, scale: 2, nullable: true })
+  price: number
+
+  @Column({ type: 'nvarchar', length: 255, nullable: true })
+  city: string
+
+  @Column({ type: 'nvarchar', length: 255, nullable: true })
+  state: string
+
+  @Column({ type: 'nvarchar', length: 255, nullable: true })
+  country: string
+
+  @Column({ type: 'nvarchar', length: 255, nullable: true })
+  zip_code: string
+
+  @Column({ type: 'float', nullable: true })
+  latitude: number
+
+  @Column({ type: 'float', nullable: true })
+  longitude: number
+
+  @Column({ type: 'nvarchar', length: 255, nullable: true })
+  property_type: string
+
+  @Column({ type: 'int', nullable: true })
+  bedrooms: number
+
+  @Column({ type: 'int', nullable: true })
+  bathrooms: number
+
+  @Column({ type: 'float', nullable: true })
+  area_size:number
+
+  @Column({ type: 'int', nullable: true })
+  year_built:number
+  
+  @Column({ type: 'float', nullable: true })
+  floors:number
+
+  @Column({ type: 'int', nullable: true })
+  parking_spaces:number
+
+  @Column({ type: 'boolean', nullable: true })
+  is_active:boolean
+
+  @Column({ type: 'nvarchar', length: 255, nullable: true })
+  property_status: string
+
+  @Column({ type: 'int', nullable: true })
+  company_id: number
+
+  @Column({ type: 'int', nullable: true })
+  agent_id: number
+
+  // @Column({ type: 'int', nullable: true })
+  // role_id: number
+
+  
+}
