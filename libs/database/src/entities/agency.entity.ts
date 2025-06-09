@@ -1,5 +1,6 @@
 import { Entity, Column, JoinColumn, ManyToOne, OneToMany } from 'typeorm'
 import { BaseEntity } from './base.entity'
+import { AgentProfilesEntity } from './agent_profiles.entity'
 
 // import { RoleEntity } from './role.entity'
 
@@ -28,9 +29,9 @@ export class AgencyEntity extends BaseEntity {
 
   @Column({ type: 'int', nullable: true })
   agency_id: number
-
-  // @Column({ type: 'int', nullable: true })
-  // role_id: number
+  
+  @OneToMany(() => AgentProfilesEntity, (agent) => agent.agency)
+  agent_profiles: AgentProfilesEntity[]
 
   
 }

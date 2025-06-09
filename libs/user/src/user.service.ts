@@ -7,6 +7,7 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import * as bcrypt from 'bcrypt';
 import { IListUser, IUpdateUser } from './user.interface';
 import { ICreateUser } from './user.interface';
+
 @Injectable()
 export class UserService {
     constructor(private readonly userRepository: UserRepository) {}
@@ -17,18 +18,12 @@ export class UserService {
       data.password || DEFAULT_PASSWORD,
       salt,
     )
-    const user = this.userRepository.create({
-      name: data.name,
+    const user = await this.userRepository.create({
       email: data.email,
-      phone: data.phone,
-      gender: data.gender,
-      password: userPassword,
-      organization_id: data.organization_id,
+      // Use the correct property name as defined in UserEntity, e.g., hashedPassword
+      password_hash: userPassword,
       role: data.role || USER_ROLE.USER,
-      code: data.code,
-      level: data.level,
-      hour_target: data.hour_target,
-    }) as Partial<UserEntity>
+    })
     return user
   }
 
@@ -41,30 +36,27 @@ export class UserService {
   }
 
   async findOne(id: number) {
-    const user = this.userRepository.findById(id)
+    const user = await this.userRepository.findById(id)
     if (!user) throw new NotFoundException('User not found')
     return user
   }
 
   async update(id: number, data: IUpdateUser) {
-    const user = this.userRepository.findById(id)
+    const user = await this.userRepository.findById(id)
     if (!user) throw new NotFoundException('User not found')
-    const userUpdate = {
-      name: data.name,
-      phone: data.phone,
-      gender: data.gender,
-      organization_id: data.organization_id,
-      role_id: data.role,
-      code: data.code,
-      level: data.level,
-      hour_target: data.hour_target,
-    } as Partial<UserEntity>
-
-    return await this.userRepository.update(id, userUpdate)
+    const userUpdate: Partial<UserEntity> = {}
+    if (data.email) userUpdate.email = data.email
+    if (data.password) {
+      const salt = await bcrypt.genSalt(10)
+      userUpdate.password_hash = await bcrypt.hash(data.password, salt)
+    }
+    if (data.role) userUpdate.role = data.role
+    await this.userRepository.update(id, userUpdate)
+    return await this.userRepository.findById(id)
   }
 
   async softDelete(id: number) {
-    const user = this.userRepository.findById(id)
+    const user = await this.userRepository.findById(id)
     if (!user) throw new NotFoundException('User not found')
     return this.userRepository.softDelete(id)
   }
