@@ -5,27 +5,27 @@ import { BaseEntity } from './base.entity'
 
 @Entity('company')
 export class CompanyEntity extends BaseEntity {
-  @Column({ type: 'string', length:255, nullable: true })
+  @Column({ type: 'nvarchar', length:255, nullable: true })
   name: string
 
-  @Column({ type:'string',length:255, nullable: true })
+  @Column({ type:'nvarchar',length:255, nullable: true })
   industry: string
 
-  @Column({ type:'string',length:255, nullable: true })
+  @Column({ type:'nvarchar',length:255, nullable: true })
   email: string
 
-  @Column({ type:'string',length:10, nullable: true })
+  @Column({ type:'nvarchar',length:10, nullable: true })
   phone:string
 
-  @Column({ type:'string',length:255, nullable: true })
+  @Column({ type:'nvarchar',length:255, nullable: true })
   address:string
 
-  @Column({ type:'string',length:255, nullable: true })
+  @Column({ type:'nvarchar',length:255, nullable: true })
   description:string
 
-  @Column({ type:'string',length:255, nullable: true })
+  @Column({ type:'nvarchar',length:255, nullable: true })
   website:string
 
-  @Column({ type:'string',length:255, nullable: true })
+  @Column({ type:'nvarchar',length:255, nullable: true })
   logo_url:string
 }
