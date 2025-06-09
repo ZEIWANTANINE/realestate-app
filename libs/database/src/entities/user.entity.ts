@@ -10,7 +10,7 @@ export class UserEntity extends BaseEntity {
   email: string
 
   @Column({ type: 'nvarchar', length: 255 })
-  password_hash: string
+  password: string
 
   @Column({ type: 'nvarchar', length: 255 })
   role: string

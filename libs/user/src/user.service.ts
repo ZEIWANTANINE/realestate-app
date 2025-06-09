@@ -21,7 +21,7 @@ export class UserService {
     const user = await this.userRepository.create({
       email: data.email,
       // Use the correct property name as defined in UserEntity, e.g., hashedPassword
-      password_hash: userPassword,
+      password: userPassword,
       role: data.role || USER_ROLE.USER,
     })
     return user
@@ -48,7 +48,7 @@ export class UserService {
     if (data.email) userUpdate.email = data.email
     if (data.password) {
       const salt = await bcrypt.genSalt(10)
-      userUpdate.password_hash = await bcrypt.hash(data.password, salt)
+      userUpdate.password = await bcrypt.hash(data.password, salt)
     }
     if (data.role) userUpdate.role = data.role
     await this.userRepository.update(id, userUpdate)

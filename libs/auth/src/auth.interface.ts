@@ -8,13 +8,6 @@ export interface LoginPayload {
 }
 
 export interface ICreateInfo {
-  name: string
   email: string
-  phone: string
-  gender: GENDER
-  password: string
-  organization_id?: number
-  code?: string
-  level?: string
-  hour_target?: number
+  password_hash?: string
 }
