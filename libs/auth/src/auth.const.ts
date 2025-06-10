@@ -1,9 +1,7 @@
 export enum USER_ROLE {
-    SYSTEM_ADMIN = 'system_admin',
-    MANAGING_UNIT = 'managing_unit',
-    HEAD_OF_UNIT = 'head_of_unit',
-    DATA_ENTRY = 'data_entry',
-    USER = 'user',
+    AGENT = "AGENT",
+    BUYER = "BUYER",
+    ADMIN = "ADMIN",
   }
   
   export const AUTH_ADMIN_ROLES_KEY = 'auth_roles'

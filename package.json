@@ -90,8 +90,12 @@
       "<rootDir>/libs/"
     ],
     "moduleNameMapper": {
+      "^@app/agency(|/.*)$": "<rootDir>/libs/agency/src/$1",
+      "^@app/agent_profile(|/.*)$": "<rootDir>/libs/agent_profile/src/$1",
       "^@app/auth(|/.*)$": "<rootDir>/libs/auth/src/$1",
+      "^@app/buyer_profile(|/.*)$": "<rootDir>/libs/buyer_profile/src/$1",
       "^@app/common(|/.*)$": "<rootDir>/libs/common/src/$1",
+      "^@app/company(|/.*)$": "<rootDir>/libs/company/src/$1",
       "^@app/database(|/.*)$": "<rootDir>/libs/database/src/$1",
       "^@app/shared(|/.*)$": "<rootDir>/libs/shared/src/$1",
       "^@app/user(|/.*)$": "<rootDir>/libs/user/src/$1"

@@ -10,7 +10,7 @@ export class AgencyEntity extends BaseEntity {
   name: string
 
   @Column({ type: 'nvarchar', length: 255})
-  logo_urls: string
+  logo_url: string
 
   @Column({ type: 'nvarchar', length: 255 })
   address: string
@@ -24,14 +24,6 @@ export class AgencyEntity extends BaseEntity {
   @Column({ type: 'nvarchar',length:255, nullable: true })
   description:string
 
-  @Column({ type: 'int', nullable: true })
-  user_id: number
-
-  @Column({ type: 'int', nullable: true })
-  agency_id: number
-  
-  @OneToMany(() => AgentProfilesEntity, (agent) => agent.agency)
-  agent_profiles: AgentProfilesEntity[]
 
   
 }

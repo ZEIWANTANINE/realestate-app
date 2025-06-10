@@ -1,8 +1,7 @@
 import { Entity, Column, JoinColumn, ManyToOne, OneToMany } from 'typeorm'
 import { BaseEntity } from './base.entity'
 import { AgencyEntity } from './agency.entity'
-
-// import { RoleEntity } from './role.entity'
+import { UserEntity } from './user.entity'
 
 @Entity('agent_profiles')
 export class AgentProfilesEntity extends BaseEntity {
@@ -27,9 +26,13 @@ export class AgentProfilesEntity extends BaseEntity {
   @Column({ type: 'int', nullable: true })
   agency_id: number
 
-  @ManyToOne(() => AgencyEntity, (agency) => agency.agent_profiles)
+  @ManyToOne(() => UserEntity)
+  @JoinColumn({ name: 'user_id' })
+  user_id_info: UserEntity
+
+  @ManyToOne(() => AgencyEntity)
   @JoinColumn({ name: 'agency_id' })
-  agency: AgencyEntity;
+  agent_id_info: AgencyEntity
 
   
 }

@@ -19,6 +19,24 @@
         "tsConfigPath": "apps/admin-api/tsconfig.app.json"
       }
     },
+    "agency": {
+      "type": "library",
+      "root": "libs/agency",
+      "entryFile": "index",
+      "sourceRoot": "libs/agency/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/agency/tsconfig.lib.json"
+      }
+    },
+    "agent_profile": {
+      "type": "library",
+      "root": "libs/agent_profile",
+      "entryFile": "index",
+      "sourceRoot": "libs/agent_profile/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/agent_profile/tsconfig.lib.json"
+      }
+    },
     "auth": {
       "type": "library",
       "root": "libs/auth",
@@ -28,6 +46,15 @@
         "tsConfigPath": "libs/auth/tsconfig.lib.json"
       }
     },
+    "buyer_profile": {
+      "type": "library",
+      "root": "libs/buyer_profile",
+      "entryFile": "index",
+      "sourceRoot": "libs/buyer_profile/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/buyer_profile/tsconfig.lib.json"
+      }
+    },
     "common": {
       "type": "library",
       "root": "libs/common",
@@ -35,6 +62,15 @@
       "sourceRoot": "libs/common/src",
       "compilerOptions": {
         "tsConfigPath": "libs/common/tsconfig.lib.json"
+      }
+    },
+    "company": {
+      "type": "library",
+      "root": "libs/company",
+      "entryFile": "index",
+      "sourceRoot": "libs/company/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/company/tsconfig.lib.json"
       }
     },
     "database": {

@@ -18,17 +18,41 @@
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false,
     "paths": {
+      "@app/agency": [
+        "libs/agency/src"
+      ],
+      "@app/agency/*": [
+        "libs/agency/src/*"
+      ],
+      "@app/agent_profile": [
+        "libs/agent_profile/src"
+      ],
+      "@app/agent_profile/*": [
+        "libs/agent_profile/src/*"
+      ],
       "@app/auth": [
         "libs/auth/src"
       ],
       "@app/auth/*": [
         "libs/auth/src/*"
       ],
+      "@app/buyer_profile": [
+        "libs/buyer_profile/src"
+      ],
+      "@app/buyer_profile/*": [
+        "libs/buyer_profile/src/*"
+      ],
       "@app/common": [
         "libs/common/src"
       ],
       "@app/common/*": [
         "libs/common/src/*"
+      ],
+      "@app/company": [
+        "libs/company/src"
+      ],
+      "@app/company/*": [
+        "libs/company/src/*"
       ],
       "@app/database": [
         "libs/database/src"

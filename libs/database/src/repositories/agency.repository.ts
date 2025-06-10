@@ -20,7 +20,7 @@ export class AgencyRepository {
     })
   }
 
-  async findAll(): Promise<AgencyEntity[]> {
+  async findAll(p0: { size: number; page: number; key?: string }): Promise<AgencyEntity[]> {
     return this.repository.find({
       where: { deleted_at: IsNull() },
       order: { created_at: 'DESC' },

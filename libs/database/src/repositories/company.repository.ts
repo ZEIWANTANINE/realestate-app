@@ -20,7 +20,7 @@ export class CompanyRepository {
     })
   }
 
-  async findAll(): Promise<CompanyEntity[]> {
+  async findAll(p0: { size: number; page: any; key? }): Promise<CompanyEntity[]> {
     return this.repository.find({
       where: { deleted_at: IsNull() },
       order: { created_at: 'DESC' },

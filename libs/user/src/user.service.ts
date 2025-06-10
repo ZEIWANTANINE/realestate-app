@@ -22,7 +22,7 @@ export class UserService {
       email: data.email,
       // Use the correct property name as defined in UserEntity, e.g., hashedPassword
       password: userPassword,
-      role: data.role || USER_ROLE.USER,
+      role: data.role || USER_ROLE.AGENT || USER_ROLE.BUYER,
     })
     return user
   }

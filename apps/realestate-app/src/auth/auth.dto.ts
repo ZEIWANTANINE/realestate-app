@@ -10,27 +10,31 @@ import {
   IsString,
   MinLength,
 } from 'class-validator'
+import { BuyerProfilesResponseDto } from '../buyer_profiles/buyer_profiles.dto'
+import { AgentProfilesResponseDto } from '../agent_profiles/agent_profiles.dto'
+export class AgentProfileDto {
+  @Expose() id: number
+  @Expose() name: string
+  // ... các trường khác của agent_profiles ...
+}
 
-
+export class BuyerProfileDto {
+  @Expose() id: number
+  @Expose() name: string
+  // ... các trường khác của buyer_profiles ...
+}
 export class InfoLoginDto {
-  @Expose()
-  id: number
+  @Expose() id: number
+  @Expose() email: string
+  @Expose() role: string
 
   @Expose()
-  name: string
+  @Type(() => AgentProfilesResponseDto)
+  agent_profile?: AgentProfilesResponseDto
 
   @Expose()
-  email: string
-
-  @Expose()
-  phone: string
-
-
-  @Expose()
-  role: string
-
-  @Expose()
-  organization_id: number
+  @Type(() => BuyerProfilesResponseDto)
+  buyer_profile?: BuyerProfilesResponseDto
 
 }
 export class LoginRequestDto {
@@ -47,47 +51,17 @@ export class LoginRequestDto {
 }
 
 export class RegisterRequestDto {
-  @Expose()
   @IsString()
-  name: string
-
-  @Expose()
-  @IsString()
+  @IsNotEmpty()
   email: string
 
-  @Expose()
   @IsString()
-  phone: string
-
-  @Expose()
-  @IsEnum(GENDER)
-  gender: GENDER
-
-  @Expose()
-  @IsString()
+  @IsNotEmpty()
   password: string
 
-  @Expose()
-  @IsOptional()
-  @IsNumber()
-  @Type(() => Number)
-  organization_id?: number
-
-  @Expose()
-  @IsOptional()
-  @IsString()
-  code: string
-
-  @Expose()
-  @IsOptional()
-  @IsString()
-  level: string
-
-  @Expose()
-  @IsOptional()
-  @IsNumber()
-  @Type(() => Number)
-  hour_target: number
+  @IsEnum(USER_ROLE)
+  @IsNotEmpty()
+  role: USER_ROLE
 }
 
 export class RefreshTokenRequestDto {
@@ -119,31 +93,13 @@ export class MeResponseDto {
   id: number
 
   @Expose()
-  name: string
-
-  @Expose()
   email: string
 
   @Expose()
-  phone: string
+  password: string
 
   @Expose()
-  gender: GENDER
-
-  @Expose()
-  organization_id?: number
-
-  @Expose()
-  role: string
-
-  @Expose()
-  code: string
-
-  @Expose()
-  level: string
-
-  @Expose()
-  hour_target: number
+  role: USER_ROLE
 
   @Expose()
   created_at: Date

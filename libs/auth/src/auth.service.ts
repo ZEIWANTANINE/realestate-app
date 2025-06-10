@@ -1,4 +1,4 @@
-import { UserEntity, UserRepository } from '@app/database';
+import { AgentProfilesRepository, BuyerProfilesRepository, UserEntity, UserRepository } from '@app/database';
 import { Injectable, BadRequestException } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { JwtService } from '@nestjs/jwt';
@@ -12,6 +12,8 @@ export class AuthService {
     private readonly jwtService: JwtService,
     private readonly userRepository: UserRepository,
     private readonly configService: ConfigService,
+    private readonly agentProfilesRepository: AgentProfilesRepository,
+    private readonly buyerProfilesRepository: BuyerProfilesRepository,
   ) {}
 
   async validateUser(email: string, password: string): Promise<UserEntity> {
@@ -43,16 +45,34 @@ export class AuthService {
     const existing = await this.userRepository.findByEmail(data.email)
     if (existing) throw new BadRequestException('Email already registered')
 
-    if (!data.password_hash) {
+    if (!data.password) {
       throw new BadRequestException('Password is required');
     }
-    const hashedPassword = await bcrypt.hash(data.password_hash, 10)
+    if (!data.role) {
+      throw new BadRequestException('Role is required');
+    }
+
+    const hashedPassword = await bcrypt.hash(data.password, 10)
 
     const created = await this.userRepository.create({
-      ...data,
-      role: USER_ROLE.USER,
+      email: data.email,
       password: hashedPassword,
+      role: data.role,
     })
+
+    // Tạo profile theo role
+    if (created.role === USER_ROLE.AGENT) {
+      await this.agentProfilesRepository.create({
+        user_id: created.id,
+        name: created.email,
+      })
+    }
+    if (created.role === USER_ROLE.BUYER) {
+      await this.buyerProfilesRepository.create({
+        user_id: created.id,
+        name: created.email,
+      })
+    }
 
     const payload: LoginPayload = {
       sub: created.id,
@@ -60,8 +80,14 @@ export class AuthService {
       role: created.role,
     }
 
-    const token = this.jwtService.sign(payload)
-    return { accessToken: token, user: payload }
+    const accessToken = this.jwtService.sign(payload, {
+      expiresIn: this.configService.get('auth.accessTokenExpire'),
+    })
+    const refreshToken = this.jwtService.sign(payload, {
+      expiresIn: this.configService.get('auth.refreshTokenExpire'),
+    })
+
+    return { user: payload, accessToken, refreshToken }
   }
 
   async refreshAccessToken(refreshToken: string) {

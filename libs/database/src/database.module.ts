@@ -1,19 +1,36 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm'
+import { DataSource, Repository } from 'typeorm'
 
 import {
   UserEntity,
+  BuyerProfilesEntity,
+  AgencyEntity,
+  AgentProfilesEntity,
+  CompanyEntity,
 } from './entities'
 import {
   UserRepository,
+  BuyerProfilesRepository,
+  AgentProfilesRepository,
+  AgencyRepository,
+  CompanyRepository,
 } from './repositories'
 import { config } from 'dotenv'
 
 const mssqlRepositories = [
   UserRepository,
+  BuyerProfilesRepository,
+  AgentProfilesRepository,
+  AgencyRepository,
+  CompanyRepository,
 ]
 const mssqlEntities = [
   UserEntity,
+  BuyerProfilesEntity,
+  AgencyEntity,
+  AgentProfilesEntity,
+  CompanyEntity
 ]
 config()
 @Module({

@@ -22,16 +22,28 @@ export class AgentProfilesRepository {
     page: number
     size: number
     key?: string
+    user_id?: number
+    agency_id?: number
   }) {
     const query = this.repository
       .createQueryBuilder('agent_profiles')
+      .leftJoinAndSelect('agent_profiles.user_id_info', 'user_id_info')
+      .leftJoinAndSelect('agent_profiles.agent_id_info', 'agent_id_info')
       .where('agent_profiles.deleted_at IS NULL')
 
     if (params.key) {
       query.andWhere(
-        '(agent_profiles.name LIKE :keyword OR agent_profiles.phone LIKE :keyword OR agent_profiles.license_number LIKE :keyword)',
+        '(agent_profiles.name LIKE :keyword OR agent_profiles.phone LIKE :keyword OR agent_profiles.license_number LIKE :keyword OR user_id_info.email LIKE :keyword OR agency.name LIKE :keyword)',
         { keyword: `%${params.key}%` },
       )
+    }
+
+    if (params.user_id) {
+      query.andWhere('agent_profiles.user_id = :user_id', { user_id: params.user_id })
+    }
+
+    if (params.agency_id) {
+      query.andWhere('agent_profiles.agency_id = :agency_id', { agency_id: params.agency_id })
     }
 
     query

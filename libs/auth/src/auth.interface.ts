@@ -9,5 +9,6 @@ export interface LoginPayload {
 
 export interface ICreateInfo {
   email: string
-  password_hash?: string
+  password?: string
+  role: USER_ROLE
 }

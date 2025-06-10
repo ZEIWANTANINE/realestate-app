@@ -1,5 +1,6 @@
 import { Entity, Column, JoinColumn, ManyToOne, OneToMany } from 'typeorm'
 import { BaseEntity } from './base.entity'
+import { UserEntity } from './user.entity'
 
 // import { RoleEntity } from './role.entity'
 
@@ -11,7 +12,7 @@ export class BuyerProfilesEntity extends BaseEntity {
   @Column({ type: 'nvarchar', length: 20, unique: true })
   phone: string
 
-  @Column({ type: 'nvarchar', length: 10 })
+  @Column({ type: 'nvarchar', length: 255 })
   avatar_url: string
 
   @Column({ type: 'nvarchar', length: 255, nullable: true })
@@ -23,7 +24,8 @@ export class BuyerProfilesEntity extends BaseEntity {
   @Column({ type: 'int', nullable: true })
   user_id: number
 
-  // @Column({ type: 'int', nullable: true })
-  // role_id: number
+  @ManyToOne(() => UserEntity)
+    @JoinColumn({ name: 'user_id' })
+    user_id_info: UserEntity
 
 }

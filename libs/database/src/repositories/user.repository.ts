@@ -33,7 +33,6 @@ export class UserRepository {
         { keyword: `%${params.key}%` },
       )
     }
-
     query
       .orderBy('users.created_at', 'DESC')
       .skip((params.page - 1) * params.size)

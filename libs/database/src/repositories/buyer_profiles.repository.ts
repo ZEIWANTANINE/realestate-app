@@ -22,16 +22,22 @@ export class BuyerProfilesRepository {
     page: number
     size: number
     key?: string
+    user_id?: number
   }) {
     const query = this.repository
       .createQueryBuilder('buyer_profiles')
+      .leftJoinAndSelect('buyer_profiles.user_id_info', 'user_id_info')
       .where('buyer_profiles.deleted_at IS NULL')
 
     if (params.key) {
       query.andWhere(
-        '(buyer_profiles.name LIKE :keyword OR buyer_profiles.phone LIKE :keyword)',
+        '(buyer_profiles.name LIKE :keyword OR buyer_profiles.phone LIKE :keyword OR user_id_info.email LIKE :keyword)',
         { keyword: `%${params.key}%` },
       )
+    }
+
+    if (params.user_id) {
+      query.andWhere('buyer_profiles.user_id = :user_id', { user_id: params.user_id })
     }
 
     query
