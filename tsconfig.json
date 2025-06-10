@@ -60,6 +60,24 @@
       "@app/database/*": [
         "libs/database/src/*"
       ],
+      "@app/favourite": [
+        "libs/favourite/src"
+      ],
+      "@app/favourite/*": [
+        "libs/favourite/src/*"
+      ],
+      "@app/news": [
+        "libs/news/src"
+      ],
+      "@app/news/*": [
+        "libs/news/src/*"
+      ],
+      "@app/property": [
+        "libs/property/src"
+      ],
+      "@app/property/*": [
+        "libs/property/src/*"
+      ],
       "@app/user": [
         "libs/user/src"
       ],

@@ -32,7 +32,7 @@ export class TransactionEntity extends BaseEntity {
   @Column({ type: 'datetime'})
   payment_time: Date
   
-@Column({ type: 'boolean', default: false })
+@Column({ type: 'bit', default: false })
   ipn_received: boolean
 
   @Column({ type: 'nvarchar', length: 50 })

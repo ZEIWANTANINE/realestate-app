@@ -11,6 +11,10 @@ import { AgencyModule } from '@app/agency';
 import { AgencyController } from './agency/agency.controller';
 import { CompanyModule } from '@app/company';
 import { CompanyController } from './company/company.controller';
+import { NewsModule } from '@app/news';
+import { NewController } from './new/new.controller';
+import { PropertyModule } from '@app/property';
+import { PropertyController } from './property/property.controller';
 @Module({
   imports: [
     DatabaseModule,
@@ -19,6 +23,8 @@ import { CompanyController } from './company/company.controller';
     AgentProfileModule,
     AgencyModule,
     CompanyModule,
+    NewsModule,
+    PropertyModule
 
   ],
   controllers: [
@@ -26,7 +32,10 @@ import { CompanyController } from './company/company.controller';
     BuyerProfileController,
     AgentProfileController,
     AgencyController,
-    CompanyController
+    CompanyController,
+    NewController,
+    PropertyController
+
   ],
   providers: [],
 })

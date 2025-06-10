@@ -9,7 +9,7 @@ export class NewEntity extends BaseEntity {
   title: string
 
   @Column({ type:'nvarchar',length:255, nullable: true })
-  context: string
+  content: string
 
   @Column({ type:'nvarchar',length:255, nullable: true })
   thumbnail_url: string
@@ -21,7 +21,7 @@ export class NewEntity extends BaseEntity {
   published_at:Date
 
   @Column({ type:'nvarchar',length:255, nullable: true })
-  tag:string
+  tags:string
 
   @Column({ type: 'int', nullable: true })
   user_id: number

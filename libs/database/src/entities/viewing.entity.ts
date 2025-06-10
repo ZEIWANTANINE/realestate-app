@@ -6,7 +6,7 @@ import { BaseEntity } from './base.entity'
 @Entity('viewing')
 export class ViewingEntity extends BaseEntity {
 
-  @Column({ type: 'string', length:'255', nullable: true })
+  @Column({ type: 'nvarchar', length:'255', nullable: true })
   status: string
 
   @Column({ type: 'int', nullable: true })

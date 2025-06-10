@@ -14,7 +14,7 @@ export class PropertyFeaturesEntity extends BaseEntity {
   @Column({ type: 'nvarchar', length: 50 })
   cooling_type: string
 
-  @Column({ type: 'boolean', nullable: true })
+  @Column({ type: 'bit', nullable: true })
   furnished: boolean
 
   @Column({ type: 'int', nullable: true })

@@ -82,6 +82,33 @@
         "tsConfigPath": "libs/database/tsconfig.lib.json"
       }
     },
+    "favourite": {
+      "type": "library",
+      "root": "libs/favourite",
+      "entryFile": "index",
+      "sourceRoot": "libs/favourite/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/favourite/tsconfig.lib.json"
+      }
+    },
+    "news": {
+      "type": "library",
+      "root": "libs/news",
+      "entryFile": "index",
+      "sourceRoot": "libs/news/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/news/tsconfig.lib.json"
+      }
+    },
+    "property": {
+      "type": "library",
+      "root": "libs/property",
+      "entryFile": "index",
+      "sourceRoot": "libs/property/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/property/tsconfig.lib.json"
+      }
+    },
     "realestate-app": {
       "type": "application",
       "root": "apps/realestate-app",

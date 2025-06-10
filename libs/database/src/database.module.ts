@@ -8,6 +8,20 @@ import {
   AgencyEntity,
   AgentProfilesEntity,
   CompanyEntity,
+  ConversationParticipantEntity,
+  ConversationEntity,
+  FavouritesEntity,
+  MessageEntity,
+  MessageReadEntity,
+  NotificationEntity,
+  PropertyFeaturesEntity,
+  PropertyMediaEntity,
+  PropertyPriceHistoryEntity,
+  TransactionEntity,
+  ViewingEntity,
+  NearbyPlaceEntity,
+  PropertiesEntity
+
 } from './entities'
 import {
   UserRepository,
@@ -15,8 +29,23 @@ import {
   AgentProfilesRepository,
   AgencyRepository,
   CompanyRepository,
+  PropertyRepository,
+  FavouriteRepository,
+  ConversationRepository,
+  ConversationParticipantRepository,
+  MessageReadRepository,
+  MessageRepository,
+  NearbyPlacesRepository,
+  NewRepository,
+  NotificationRepository,
+  PropertyFeatureRepository,
+  PropertyMediaRepository,
+  PropertyPriceHistoryRepository,
+  TransactionRepository,
+  ViewingRepository,
 } from './repositories'
 import { config } from 'dotenv'
+import { NewEntity } from './entities/new.entity';
 
 const mssqlRepositories = [
   UserRepository,
@@ -24,13 +53,43 @@ const mssqlRepositories = [
   AgentProfilesRepository,
   AgencyRepository,
   CompanyRepository,
+  PropertyRepository,
+  FavouriteRepository,
+  ConversationRepository,
+  ConversationParticipantRepository,
+  FavouriteRepository,
+  MessageReadRepository,
+  MessageRepository,
+  NearbyPlacesRepository,
+  NewRepository,
+  NotificationRepository,
+  PropertyPriceHistoryRepository,
+  PropertyFeatureRepository,
+  PropertyMediaRepository,
+  PropertyRepository,
+  TransactionRepository,
+  ViewingRepository
 ]
 const mssqlEntities = [
   UserEntity,
   BuyerProfilesEntity,
   AgencyEntity,
   AgentProfilesEntity,
-  CompanyEntity
+  CompanyEntity,
+  ConversationParticipantEntity,
+  ConversationEntity,
+  FavouritesEntity,
+  MessageReadEntity,
+  MessageEntity,
+  NearbyPlaceEntity,
+  NewEntity,
+  NotificationEntity,
+  PropertyFeaturesEntity,
+  PropertyMediaEntity,
+  PropertyPriceHistoryEntity,
+  TransactionEntity,
+  ViewingEntity,
+  PropertiesEntity
 ]
 config()
 @Module({

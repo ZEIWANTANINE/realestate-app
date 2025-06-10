@@ -11,9 +11,6 @@ export class PropertiesEntity extends BaseEntity {
   @Column({ type: 'nvarchar', length: 255, unique: true })
   description: string
 
-  @Column({ type: 'nvarchar', length: 10 })
-  license_number: string
-
   @Column({ type: 'nvarchar', length: 255, nullable: true })
   address: string
 
@@ -30,13 +27,13 @@ export class PropertiesEntity extends BaseEntity {
   country: string
 
   @Column({ type: 'nvarchar', length: 255, nullable: true })
-  zip_code: string
+  zipcode: string
 
   @Column({ type: 'float', nullable: true })
   latitude: number
 
   @Column({ type: 'float', nullable: true })
-  longitude: number
+  longtitude: number
 
   @Column({ type: 'nvarchar', length: 255, nullable: true })
   property_type: string
@@ -59,11 +56,8 @@ export class PropertiesEntity extends BaseEntity {
   @Column({ type: 'int', nullable: true })
   parking_spaces:number
 
-  @Column({ type: 'boolean', nullable: true })
+  @Column({ type: 'bit', nullable: true })
   is_active:boolean
-
-  @Column({ type: 'nvarchar', length: 255, nullable: true })
-  property_status: string
 
   @Column({ type: 'int', nullable: true })
   company_id: number
