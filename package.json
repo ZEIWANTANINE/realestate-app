@@ -100,6 +100,7 @@
       "^@app/favourite(|/.*)$": "<rootDir>/libs/favourite/src/$1",
       "^@app/news(|/.*)$": "<rootDir>/libs/news/src/$1",
       "^@app/property(|/.*)$": "<rootDir>/libs/property/src/$1",
+      "^@app/property_features(|/.*)$": "<rootDir>/libs/property_features/src/$1",
       "^@app/property_media(|/.*)$": "<rootDir>/libs/property_media/src/$1",
       "^@app/property_price_history(|/.*)$": "<rootDir>/libs/property_price_history/src/$1",
       "^@app/shared(|/.*)$": "<rootDir>/libs/shared/src/$1",

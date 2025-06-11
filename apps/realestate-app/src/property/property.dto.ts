@@ -1,4 +1,5 @@
 import { USER_ROLE } from '@app/auth'
+import { PROPERTY_TYPE } from '@app/common'
 import { Expose, Type } from 'class-transformer'
 import {
   IsOptional,
@@ -78,8 +79,8 @@ export class CreatePropertyDto {
 
   @Expose()
   @IsOptional()
-  @IsString()
-  property_type?: string
+  @IsEnum(PROPERTY_TYPE)
+  property_type?: PROPERTY_TYPE
 
   @Expose()
   @IsOptional()
@@ -188,8 +189,8 @@ export class UpdatePropertyDto {
 
   @Expose()
   @IsOptional()
-  @IsString()
-  property_type?: string
+  @IsEnum(PROPERTY_TYPE)
+  property_type?: PROPERTY_TYPE
 
   @Expose()
   @IsOptional()
@@ -273,7 +274,7 @@ export class PropertyResponseDto {
   longtitude?: number
 
   @Expose()
-  property_type?: string
+  property_type?: PROPERTY_TYPE
 
   @Expose()
   bedrooms?: number

@@ -109,6 +109,15 @@
         "tsConfigPath": "libs/property/tsconfig.lib.json"
       }
     },
+    "property_features": {
+      "type": "library",
+      "root": "libs/property_features",
+      "entryFile": "index",
+      "sourceRoot": "libs/property_features/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/property_features/tsconfig.lib.json"
+      }
+    },
     "property_media": {
       "type": "library",
       "root": "libs/property_media",

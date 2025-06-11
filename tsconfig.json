@@ -78,6 +78,12 @@
       "@app/property/*": [
         "libs/property/src/*"
       ],
+      "@app/property_features": [
+        "libs/property_features/src"
+      ],
+      "@app/property_features/*": [
+        "libs/property_features/src/*"
+      ],
       "@app/property_media": [
         "libs/property_media/src"
       ],

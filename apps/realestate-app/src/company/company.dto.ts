@@ -1,4 +1,5 @@
 import { USER_ROLE } from '@app/auth'
+import { INDUSTRY } from '@app/common'
 import { Expose, Type } from 'class-transformer'
 import {
   IsOptional,
@@ -9,7 +10,6 @@ import {
   IsDecimal,
   IsInt,
 } from 'class-validator'
-import { DeleteDateColumn } from 'typeorm'
 export class CreateCompanyDto {
   @Expose()
   @IsString()
@@ -27,8 +27,8 @@ export class CreateCompanyDto {
 
   @Expose()
   @IsOptional()
-  @IsString()
-  industry?: string
+  @IsEnum(INDUSTRY)
+  industry?: INDUSTRY
 
   @Expose()
   @IsOptional()
@@ -68,8 +68,8 @@ export class UpdateCompanyDto {
 
   @Expose()
   @IsOptional()
-  @IsString()
-  industry?: string
+  @IsEnum(INDUSTRY)
+  industry?: INDUSTRY
 
   @Expose()
   @IsOptional()
@@ -106,7 +106,7 @@ export class CompanyResponseDto {
   logo_url?: string
 
   @Expose()
-  industry?: string
+  industry?: INDUSTRY
 
   @Expose()
   email?: string

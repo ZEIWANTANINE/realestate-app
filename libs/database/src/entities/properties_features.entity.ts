@@ -3,11 +3,8 @@ import { BaseEntity } from './base.entity'
 
 // import { RoleEntity } from './role.entity'
 
-@Entity('properties_features')
+@Entity('property_features')
 export class PropertyFeaturesEntity extends BaseEntity {
-  @Column({ type: 'nvarchar', length: 255 })
-  name: string
-
   @Column({ type: 'nvarchar', length: 50})
   heating_type: string
 
@@ -19,8 +16,5 @@ export class PropertyFeaturesEntity extends BaseEntity {
 
   @Column({ type: 'int', nullable: true })
   property_id: number
-
-  // @Column({ type: 'int', nullable: true })
-  // role_id: number
 
 }

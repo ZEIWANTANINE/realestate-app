@@ -1,4 +1,4 @@
-import { MEDIA_TYPE } from '@app/common'
+import { COOL, HEAT } from '@app/common/common.const'
 import { Expose, Type } from 'class-transformer'
 import {
   IsOptional,
@@ -9,50 +9,51 @@ import {
   IsDecimal,
   IsInt,
   IsDate,
+  IsBoolean,
 } from 'class-validator'
-export class CreatePropertyMediaDto {
+export class CreatePropertyFeatureDto {
   @Expose()
     @IsInt()
   property_id: number
 
     @Expose()
-        @IsOptional()
-        @IsEnum(MEDIA_TYPE)
-  media_type?: MEDIA_TYPE
-
-    @Expose()
-        @IsOptional()
-        @IsDate()
-  media_url?: string
-
-    @Expose()
-    @IsString()
     @IsOptional()
-  caption?: string
+    @IsEnum(HEAT)
+  heating_type?: HEAT
+
+    @Expose()
+    @IsOptional()
+    @IsEnum(COOL)
+  cooling_type?: COOL
+
+    @Expose()
+    @IsBoolean()
+    @IsOptional()
+  furnished?: boolean
 }
 
-export class UpdatePropertyMediaDto {
+export class UpdatePropertyFeatureDto {
    @Expose()
     @IsInt()
   property_id: number
 
     @Expose()
-        @IsOptional()
-        @IsEnum(MEDIA_TYPE)
-  media_type?: MEDIA_TYPE
-
-    @Expose()
-        @IsOptional()
-        @IsDate()
-  media_url?: string
-
-    @Expose()
-    @IsString()
     @IsOptional()
-  caption?: string
+    @IsEnum(HEAT)
+  heating_type?: HEAT
+
+    @Expose()
+    @IsOptional()
+    @IsEnum(COOL)
+  cooling_type?: COOL
+
+    @Expose()
+    @IsBoolean()
+    @IsOptional()
+  furnished?: boolean
 }
 
-export class PropertyMediaResponseDto {
+export class PropertyFeatureResponseDto {
   @Expose()
   id: number
 
@@ -60,13 +61,13 @@ export class PropertyMediaResponseDto {
   property_id: number
 
     @Expose()
-   media_type?: MEDIA_TYPE
+  heating_type?: HEAT
 
     @Expose()
-  media_url?: string
+  cooling_type?: COOL
 
     @Expose()
-  caption?: string
+  furnished?: boolean
 
   @Expose()
   created_at: Date
@@ -78,7 +79,7 @@ export class PropertyMediaResponseDto {
   deleted_at?: Date
 }
 
-export class ListPropertyMediaRequestDto {
+export class ListPropertyFeatureRequestDto {
   @Expose({ name: 'page' })
   @IsOptional()
   @IsNumber()

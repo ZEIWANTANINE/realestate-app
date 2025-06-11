@@ -23,6 +23,8 @@ import { PropertyPriceHistoryModule } from '@app/property_price_history/property
 import { PropertyPriceHistoryController } from './property_price_history/property_price_history.controller';
 import { PropertyMediaModule } from '@app/property_media';
 import { PropertyMediaController } from './property_media/property_media.controller';
+import { PropertyFeaturesModule } from '@app/property_features';
+import { PropertyFeatureController } from './property_feature/property_feature.controller';
 @Module({
   imports: [
     DatabaseModule,
@@ -36,7 +38,8 @@ import { PropertyMediaController } from './property_media/property_media.control
     FavouriteModule,
     ViewingModule,
     PropertyPriceHistoryModule,
-    PropertyMediaModule
+    PropertyMediaModule,
+    PropertyFeaturesModule
   ],
   controllers: [
     UserController,
@@ -49,7 +52,8 @@ import { PropertyMediaController } from './property_media/property_media.control
     FavouriteController,
     ViewingController,
     PropertyPriceHistoryController,
-    PropertyMediaController
+    PropertyMediaController,
+    PropertyFeatureController
   ],
   providers: [],
 })
