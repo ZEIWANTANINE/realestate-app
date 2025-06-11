@@ -15,6 +15,10 @@ import { NewsModule } from '@app/news';
 import { NewController } from './new/new.controller';
 import { PropertyModule } from '@app/property';
 import { PropertyController } from './property/property.controller';
+import { FavouriteModule } from '@app/favourite';
+import { FavouriteController } from './favourite/favourite.controller';
+import { ViewingModule } from '@app/viewing/viewing.module';
+import { ViewingController } from './viewing/viewing.controller';
 @Module({
   imports: [
     DatabaseModule,
@@ -24,8 +28,9 @@ import { PropertyController } from './property/property.controller';
     AgencyModule,
     CompanyModule,
     NewsModule,
-    PropertyModule
-
+    PropertyModule,
+    FavouriteModule,
+    ViewingModule
   ],
   controllers: [
     UserController,
@@ -34,8 +39,9 @@ import { PropertyController } from './property/property.controller';
     AgencyController,
     CompanyController,
     NewController,
-    PropertyController
-
+    PropertyController,
+    FavouriteController,
+    ViewingController
   ],
   providers: [],
 })

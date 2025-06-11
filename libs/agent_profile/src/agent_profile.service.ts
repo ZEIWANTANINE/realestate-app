@@ -12,17 +12,17 @@ constructor(
     private readonly userRepository: UserRepository,
     private readonly agentProfilesRepository: AgentProfilesRepository,
     private readonly agencyRepository: AgencyRepository
-) {}
+) {} 
 
   async create(data: ICreateAgentProfiles) {
     const user = await this.userRepository.findById(data.user_id);
-    const agency = await this.agencyRepository.findById(data.agent_id);
-    if (!user||agency!) {
+    const agency = await this.agencyRepository.findById(data.agency_id);
+    if (!user||!agency) {
       throw new NotFoundException('Agent not found')
     }
     const buyer_profile = await this.agentProfilesRepository.create({
-    user_id: data.user_id,
-    agency_id: data.agent_id,
+      user_id: data.user_id,
+      agency_id: data.agency_id,
       name: data.name,
       phone: data.phone,
       avatar_url: data.avatar_url,
@@ -48,13 +48,13 @@ constructor(
 
   async update(id: number, data: IUpdateAgentProfile) {
     const user = await this.userRepository.findById(data.user_id);
-    const agency = await this.agencyRepository.findById(data.agent_id);
-    if (!user||agency!) {
+    const agency = await this.agencyRepository.findById(data.agency_id);
+    if (!user||!agency) {
       throw new NotFoundException('Agent not found')
     }
     await this.agentProfilesRepository.update(id, {
       user_id: data.user_id,
-      agency_id: data.agent_id,
+      agency_id: data.agency_id,
       name: data.name,
       phone: data.phone,
       avatar_url: data.avatar_url,

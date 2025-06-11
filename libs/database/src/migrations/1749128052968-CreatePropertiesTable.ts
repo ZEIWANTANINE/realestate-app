@@ -16,7 +16,7 @@ export class CreatePropertyTable1749128114996 implements MigrationInterface {
                         { name: 'price', type: 'decimal', precision: 15, scale: 2, isNullable: true },
                         { name: 'city', type: 'nvarchar', length: '255', isNullable: true },
                         { name: 'state', type: 'nvarchar', length: '255', isNullable: true },
-                        { name: 'country', type: 'float', isNullable: true },
+                        { name: 'country', type: 'nvarchar', length: '255', isNullable: true },
                         { name: 'zipcode', type: 'nvarchar', isNullable: true },
                         { name: 'latitude', type: 'float',  isNullable: true },
                         { name: 'longtitude', type: 'float', isNullable: true },

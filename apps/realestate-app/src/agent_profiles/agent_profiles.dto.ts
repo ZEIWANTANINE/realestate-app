@@ -15,7 +15,7 @@ export class CreateAgentProfilesDto {
 
   @Expose()
   @IsNumber()
-  agent_id: number
+  agency_id: number
 
   @Expose()
   @IsString()
@@ -49,7 +49,7 @@ export class UpdateAgentProfilesDto {
 
   @Expose()
   @IsNumber()
-  agent_id: number
+  agency_id: number
 
   @Expose()
   @IsOptional()

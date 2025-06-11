@@ -83,6 +83,12 @@
       ],
       "@app/user/*": [
         "libs/user/src/*"
+      ],
+      "@app/viewing": [
+        "libs/viewing/src"
+      ],
+      "@app/viewing/*": [
+        "libs/viewing/src/*"
       ]
     }
   }

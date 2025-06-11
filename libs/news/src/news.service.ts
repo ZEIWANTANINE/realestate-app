@@ -16,7 +16,7 @@ export class NewsService {
               thumbnail_url: data.thumbnail_url,
               source_url: data.source_url,
               published_at: data.published_at,
-              tag: data.tags,
+              tags: data.tags,
               user_id: data.user_id,
             })
             return company
@@ -43,7 +43,7 @@ export class NewsService {
               thumbnail_url: data.thumbnail_url,
               source_url: data.source_url,
               published_at: data.published_at,
-              tag: data.tags,
+              tags: data.tags,
               user_id: data.user_id,
             } as Partial<NewEntity>
         

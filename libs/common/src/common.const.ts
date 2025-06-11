@@ -17,6 +17,11 @@ export enum GENDER {
   MALE = 'male',
   FEMALE = 'female',
 }
+export enum STATUS{
+  Pending = 'pending',
+  Confirmed = 'confirmed',
+  Canceled = 'canceled',
+}
 
 export const DEFAULT_PAGE_SIZE = 10
 export const DEFAULT_PAGE = 1

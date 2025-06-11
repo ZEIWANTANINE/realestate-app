@@ -13,9 +13,9 @@ export class FavouriteService {
             private readonly favouriteRepository: FavouriteRepository,
                     ){}
                     async create(data: ICreateFavourite) {
-                        if (data.user_id === undefined || data.property_id === undefined) {
-                            throw new NotFoundException('User ID or Property ID is undefined');
-                        }
+                      if (typeof data.user_id !== 'number' || typeof data.property_id !== 'number') {
+                        throw new NotFoundException('User or Property not found');
+                      }
                         const user = await this.userRepository.findById(data.user_id);
                         const property = await this.propertyRepository.findById(data.property_id);
                         if (!user || !property) {
@@ -32,6 +32,8 @@ export class FavouriteService {
                         return this.favouriteRepository.findAll({
                           page: params.page || DEFAULT_PAGE,
                           size: params.size || DEFAULT_PAGE_SIZE,
+                          user_id: params.user_id, // Pass user_id
+                          property_id: params.property_id, // Pass property_id
                         })
                       }
                     
@@ -42,9 +44,9 @@ export class FavouriteService {
                       }
                     
                       async update(id: number, data: IUpdateFavourite) {
-                        if (data.user_id === undefined || data.property_id === undefined) {
-                            throw new NotFoundException('User ID or Property ID is undefined');
-                        }
+                        if (typeof data.user_id !== 'number' || typeof data.property_id !== 'number') {
+                            throw new NotFoundException('User or Property not found');
+                          }
                         const user = await this.userRepository.findById(data.user_id);
                         const property = await this.propertyRepository.findById(data.property_id);
                         if (!user || !property) return null;

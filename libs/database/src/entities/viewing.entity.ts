@@ -3,7 +3,7 @@ import { BaseEntity } from './base.entity'
 
 // import { RoleEntity } from './role.entity'
 
-@Entity('viewing')
+@Entity('viewings')
 export class ViewingEntity extends BaseEntity {
 
   @Column({ type: 'nvarchar', length:'255', nullable: true })
@@ -16,7 +16,7 @@ export class ViewingEntity extends BaseEntity {
   buyer_id: number
 
   @Column({ type: 'date', nullable: true })
-  scheduled_date:Date
+  schedule_date:Date
 
   // @Column({ type: 'int', nullable: true })
   // role_id: number

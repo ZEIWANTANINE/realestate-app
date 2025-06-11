@@ -2,7 +2,7 @@
 
 export class ICreateAgentProfiles {
   user_id: number
-  agent_id: number
+  agency_id: number
   name?: string
   phone?: string
   license_number?: string
@@ -12,7 +12,7 @@ export class ICreateAgentProfiles {
 
 export interface IUpdateAgentProfile {
   user_id: number
-  agent_id: number
+  agency_id: number
   name?: string
   phone?: string
   license_number?: string

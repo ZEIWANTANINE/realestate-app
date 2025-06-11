@@ -135,6 +135,15 @@
       "compilerOptions": {
         "tsConfigPath": "libs/user/tsconfig.lib.json"
       }
+    },
+    "viewing": {
+      "type": "library",
+      "root": "libs/viewing",
+      "entryFile": "index",
+      "sourceRoot": "libs/viewing/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/viewing/tsconfig.lib.json"
+      }
     }
   }
 }

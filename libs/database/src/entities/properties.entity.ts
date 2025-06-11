@@ -50,7 +50,7 @@ export class PropertiesEntity extends BaseEntity {
   @Column({ type: 'int', nullable: true })
   year_built:number
   
-  @Column({ type: 'float', nullable: true })
+  @Column({ type: 'int', nullable: true })
   floors:number
 
   @Column({ type: 'int', nullable: true })

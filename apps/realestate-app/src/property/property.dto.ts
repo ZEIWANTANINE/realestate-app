@@ -8,6 +8,7 @@ import {
   IsPositive,
   IsDecimal,
   IsInt,
+  IsBoolean
 } from 'class-validator'
 import { isFloat32Array } from 'util/types'
 
@@ -34,6 +35,7 @@ export class CreatePropertyDto {
 
   @Expose()
   @IsOptional()
+  @Type(() => Number)
   @IsDecimal()
   price?: number
 
@@ -60,17 +62,19 @@ export class CreatePropertyDto {
   @Expose()
   @IsOptional()
   @IsString()
-  zip_code?: string
+  zipcode?: string
 
   @Expose()
   @IsOptional()
-  @IsInt()
+  @Type(() => Number)
+  @IsNumber()
   latitude?: number
 
   @Expose()
   @IsOptional()
-  @IsInt()
-  longitude?: number
+  @Type(() => Number)
+  @IsNumber()
+  longtitude?: number
 
   @Expose()
   @IsOptional()
@@ -79,31 +83,37 @@ export class CreatePropertyDto {
 
   @Expose()
   @IsOptional()
+    @Type(() => Number)
   @IsInt()
   bedrooms?: number
 
   @Expose()
   @IsOptional()
+    @Type(() => Number)
   @IsInt()
   bathrooms?: number
 
   @Expose()
   @IsOptional()
+    @Type(() => Number)
   @IsDecimal()
   area_size?: number
 
   @Expose()
   @IsOptional()
+    @Type(() => Number)
   @IsInt()
   year_built?: number
 
   @Expose()
   @IsOptional()
+    @Type(() => Number)
   @IsInt()
   floors?: number
 
   @Expose()
   @IsOptional()
+    @Type(() => Number)
   @IsInt()
   parking_spaces?: number
 
@@ -113,8 +123,7 @@ export class CreatePropertyDto {
 }
 
 export class UpdatePropertyDto {
-
-    @Expose()
+@Expose()
     @IsOptional()
   @IsInt()
   agent_id: number
@@ -136,6 +145,7 @@ export class UpdatePropertyDto {
 
   @Expose()
   @IsOptional()
+  @Type(() => Number)
   @IsDecimal()
   price?: number
 
@@ -162,17 +172,19 @@ export class UpdatePropertyDto {
   @Expose()
   @IsOptional()
   @IsString()
-  zip_code?: string
+  zipcode?: string
 
   @Expose()
   @IsOptional()
-  @IsInt()
+  @Type(() => Number)
+  @IsNumber()
   latitude?: number
 
   @Expose()
   @IsOptional()
-  @IsInt()
-  longitude?: number
+  @Type(() => Number)
+  @IsNumber()
+  longtitude?: number
 
   @Expose()
   @IsOptional()
@@ -181,31 +193,37 @@ export class UpdatePropertyDto {
 
   @Expose()
   @IsOptional()
+    @Type(() => Number)
   @IsInt()
   bedrooms?: number
 
   @Expose()
   @IsOptional()
+    @Type(() => Number)
   @IsInt()
   bathrooms?: number
 
   @Expose()
   @IsOptional()
+    @Type(() => Number)
   @IsDecimal()
   area_size?: number
 
   @Expose()
   @IsOptional()
+    @Type(() => Number)
   @IsInt()
   year_built?: number
 
   @Expose()
   @IsOptional()
+    @Type(() => Number)
   @IsInt()
   floors?: number
 
   @Expose()
   @IsOptional()
+    @Type(() => Number)
   @IsInt()
   parking_spaces?: number
 
@@ -246,13 +264,13 @@ export class PropertyResponseDto {
   country?: string
 
   @Expose()
-  zip_code?: string
+  zipcode?: string
 
   @Expose()
   latitude?: number
 
   @Expose()
-  longitude?: number
+  longtitude?: number
 
   @Expose()
   property_type?: string
