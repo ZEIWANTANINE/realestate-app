@@ -18,10 +18,11 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./apps/realestate-app/test/jest-e2e.json",
-    "migrate:create": "ts-node ./node_modules/typeorm/cli.js migration:create",
-    "migrate:generate": "ts-node ./node_modules/typeorm/cli.js migration:generate -d ./typeorm.config.ts",
-    "migrate:run": "ts-node ./node_modules/typeorm/cli.js migration:run -d ./typeorm.config.ts",
-    "migrate:revert": "ts-node ./node_modules/typeorm/cli.js migration:revert -d ./typeorm.config.ts"
+    "typeorm": "typeorm-ts-node-commonjs",
+    "migrate:create": "npm run typeorm -- migration:create",
+    "migrate:generate": "npm run typeorm -- migration:generate -d ./typeorm.config.ts",
+    "migrate:run": "npm run typeorm -- migration:run -d ./typeorm.config.ts",
+    "migrate:revert": "npm run typeorm -- migration:revert -d ./typeorm.config.ts"
   },
   "dependencies": {
     "@nestjs/common": "^11.0.1",
@@ -98,6 +99,7 @@
       "^@app/company(|/.*)$": "<rootDir>/libs/company/src/$1",
       "^@app/database(|/.*)$": "<rootDir>/libs/database/src/$1",
       "^@app/favourite(|/.*)$": "<rootDir>/libs/favourite/src/$1",
+      "^@app/nearby_place(|/.*)$": "<rootDir>/libs/nearby_place/src/$1",
       "^@app/news(|/.*)$": "<rootDir>/libs/news/src/$1",
       "^@app/property(|/.*)$": "<rootDir>/libs/property/src/$1",
       "^@app/property_features(|/.*)$": "<rootDir>/libs/property_features/src/$1",

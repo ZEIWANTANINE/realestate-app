@@ -66,6 +66,12 @@
       "@app/favourite/*": [
         "libs/favourite/src/*"
       ],
+      "@app/nearby_place": [
+        "libs/nearby_place/src"
+      ],
+      "@app/nearby_place/*": [
+        "libs/nearby_place/src/*"
+      ],
       "@app/news": [
         "libs/news/src"
       ],

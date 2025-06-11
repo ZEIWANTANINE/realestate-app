@@ -25,6 +25,8 @@ import { PropertyMediaModule } from '@app/property_media';
 import { PropertyMediaController } from './property_media/property_media.controller';
 import { PropertyFeaturesModule } from '@app/property_features';
 import { PropertyFeatureController } from './property_feature/property_feature.controller';
+import { NearbyPlaceModule } from '@app/nearby_place';
+import { NearbyPlaceController } from './nearby_place/nearby_place.controller';
 @Module({
   imports: [
     DatabaseModule,
@@ -39,7 +41,8 @@ import { PropertyFeatureController } from './property_feature/property_feature.c
     ViewingModule,
     PropertyPriceHistoryModule,
     PropertyMediaModule,
-    PropertyFeaturesModule
+    PropertyFeaturesModule,
+    NearbyPlaceModule
   ],
   controllers: [
     UserController,
@@ -53,7 +56,8 @@ import { PropertyFeatureController } from './property_feature/property_feature.c
     ViewingController,
     PropertyPriceHistoryController,
     PropertyMediaController,
-    PropertyFeatureController
+    PropertyFeatureController,
+    NearbyPlaceController
   ],
   providers: [],
 })

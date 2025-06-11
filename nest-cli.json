@@ -91,6 +91,15 @@
         "tsConfigPath": "libs/favourite/tsconfig.lib.json"
       }
     },
+    "nearby_place": {
+      "type": "library",
+      "root": "libs/nearby_place",
+      "entryFile": "index",
+      "sourceRoot": "libs/nearby_place/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/nearby_place/tsconfig.lib.json"
+      }
+    },
     "news": {
       "type": "library",
       "root": "libs/news",

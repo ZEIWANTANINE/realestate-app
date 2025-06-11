@@ -1,5 +1,7 @@
 import { Entity, Column, JoinColumn, ManyToOne, OneToMany } from 'typeorm'
 import { BaseEntity } from './base.entity'
+import { PropertyMediaEntity } from './property_media.entity'
+import { NearbyPlaceEntity } from './nearby_place.entity'
 
 // import { RoleEntity } from './role.entity'
 
@@ -64,6 +66,12 @@ export class PropertiesEntity extends BaseEntity {
 
   @Column({ type: 'int', nullable: true })
   agent_id: number
+
+  @OneToMany(() => PropertyMediaEntity, propertyMedia => propertyMedia.property)
+  propertyMedias: PropertyMediaEntity[]
+
+  @OneToMany(() => NearbyPlaceEntity, nearbyPlace => nearbyPlace.property)
+  nearbyPlaces: NearbyPlaceEntity[]
 
   // @Column({ type: 'int', nullable: true })
   // role_id: number

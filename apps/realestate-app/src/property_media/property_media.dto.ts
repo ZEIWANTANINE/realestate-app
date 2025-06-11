@@ -16,13 +16,13 @@ export class CreatePropertyMediaDto {
   property_id: number
 
     @Expose()
-        @IsOptional()
-        @IsEnum(MEDIA_TYPE)
+    @IsOptional()
+    @IsEnum(MEDIA_TYPE)
   media_type?: MEDIA_TYPE
 
     @Expose()
-        @IsOptional()
-        @IsDate()
+    @IsOptional()
+    @IsString()
   media_url?: string
 
     @Expose()
@@ -43,7 +43,7 @@ export class UpdatePropertyMediaDto {
 
     @Expose()
         @IsOptional()
-        @IsDate()
+        @IsString()
   media_url?: string
 
     @Expose()

@@ -1,5 +1,6 @@
 import { Entity, Column, JoinColumn, ManyToOne, OneToMany } from 'typeorm'
 import { BaseEntity } from './base.entity'
+import { PropertiesEntity } from './properties.entity'
 
 // import { RoleEntity } from './role.entity'
 
@@ -16,4 +17,8 @@ export class PropertyMediaEntity extends BaseEntity {
 
   @Column({ type: 'int', nullable: true })
   property_id: number
+
+  @ManyToOne(() => PropertiesEntity, property => property.propertyMedias)
+  @JoinColumn({ name: 'property_id' })
+  property: PropertiesEntity
 }
