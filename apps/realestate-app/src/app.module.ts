@@ -19,6 +19,8 @@ import { FavouriteModule } from '@app/favourite';
 import { FavouriteController } from './favourite/favourite.controller';
 import { ViewingModule } from '@app/viewing/viewing.module';
 import { ViewingController } from './viewing/viewing.controller';
+import { PropertyPriceHistoryModule } from '@app/property_price_history/property_price_history.module';
+import { PropertyPriceHistoryController } from './property_price_history/property_price_history.controller';
 @Module({
   imports: [
     DatabaseModule,
@@ -30,7 +32,8 @@ import { ViewingController } from './viewing/viewing.controller';
     NewsModule,
     PropertyModule,
     FavouriteModule,
-    ViewingModule
+    ViewingModule,
+    PropertyPriceHistoryModule
   ],
   controllers: [
     UserController,
@@ -41,7 +44,8 @@ import { ViewingController } from './viewing/viewing.controller';
     NewController,
     PropertyController,
     FavouriteController,
-    ViewingController
+    ViewingController,
+    PropertyPriceHistoryController
   ],
   providers: [],
 })

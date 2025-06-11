@@ -109,6 +109,15 @@
         "tsConfigPath": "libs/property/tsconfig.lib.json"
       }
     },
+    "property_price_history": {
+      "type": "library",
+      "root": "libs/property_price_history",
+      "entryFile": "index",
+      "sourceRoot": "libs/property_price_history/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/property_price_history/tsconfig.lib.json"
+      }
+    },
     "realestate-app": {
       "type": "application",
       "root": "apps/realestate-app",

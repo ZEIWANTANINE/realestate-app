@@ -17,7 +17,7 @@ export class ViewingController {
   @Get()
   async findAll(@Query() query) {
     const result = await this.viewingService.findAll(query)
-    return result.data.map(item => plainToInstance(FavoutireResponseDto, item, { excludeExtraneousValues: true }))
+    return result.data.map(item => plainToInstance(ViewingResponseDto, item, { excludeExtraneousValues: true }))
   }
 
   @Get('detail/:id')

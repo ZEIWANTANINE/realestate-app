@@ -78,6 +78,12 @@
       "@app/property/*": [
         "libs/property/src/*"
       ],
+      "@app/property_price_history": [
+        "libs/property_price_history/src"
+      ],
+      "@app/property_price_history/*": [
+        "libs/property_price_history/src/*"
+      ],
       "@app/user": [
         "libs/user/src"
       ],
