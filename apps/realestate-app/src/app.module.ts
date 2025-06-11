@@ -21,6 +21,8 @@ import { ViewingModule } from '@app/viewing/viewing.module';
 import { ViewingController } from './viewing/viewing.controller';
 import { PropertyPriceHistoryModule } from '@app/property_price_history/property_price_history.module';
 import { PropertyPriceHistoryController } from './property_price_history/property_price_history.controller';
+import { PropertyMediaModule } from '@app/property_media';
+import { PropertyMediaController } from './property_media/property_media.controller';
 @Module({
   imports: [
     DatabaseModule,
@@ -33,7 +35,8 @@ import { PropertyPriceHistoryController } from './property_price_history/propert
     PropertyModule,
     FavouriteModule,
     ViewingModule,
-    PropertyPriceHistoryModule
+    PropertyPriceHistoryModule,
+    PropertyMediaModule
   ],
   controllers: [
     UserController,
@@ -45,7 +48,8 @@ import { PropertyPriceHistoryController } from './property_price_history/propert
     PropertyController,
     FavouriteController,
     ViewingController,
-    PropertyPriceHistoryController
+    PropertyPriceHistoryController,
+    PropertyMediaController
   ],
   providers: [],
 })

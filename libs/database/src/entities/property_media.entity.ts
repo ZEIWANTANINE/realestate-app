@@ -3,7 +3,7 @@ import { BaseEntity } from './base.entity'
 
 // import { RoleEntity } from './role.entity'
 
-@Entity('properties_media')
+@Entity('property_media')
 export class PropertyMediaEntity extends BaseEntity {
   @Column({ type: 'nvarchar', length: 255 })
   media_type: string
