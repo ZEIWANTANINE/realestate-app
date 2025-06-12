@@ -42,6 +42,12 @@
       "@app/buyer_profile/*": [
         "libs/buyer_profile/src/*"
       ],
+      "@app/chat": [
+        "libs/chat/src"
+      ],
+      "@app/chat/*": [
+        "libs/chat/src/*"
+      ],
       "@app/common": [
         "libs/common/src"
       ],
@@ -65,6 +71,12 @@
       ],
       "@app/favourite/*": [
         "libs/favourite/src/*"
+      ],
+      "@app/message": [
+        "libs/message/src"
+      ],
+      "@app/message/*": [
+        "libs/message/src/*"
       ],
       "@app/nearby_place": [
         "libs/nearby_place/src"
@@ -101,6 +113,12 @@
       ],
       "@app/property_price_history/*": [
         "libs/property_price_history/src/*"
+      ],
+      "@app/transaction": [
+        "libs/transaction/src"
+      ],
+      "@app/transaction/*": [
+        "libs/transaction/src/*"
       ],
       "@app/user": [
         "libs/user/src"

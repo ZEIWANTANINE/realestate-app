@@ -42,13 +42,9 @@ export class TransactionEntity extends BaseEntity {
   amount: number
 
   @Column({ type: 'int', nullable: true })
-  property_id: number
+  property_id: number | null
 
   @Column({ type: 'int', nullable: true })
-  buyer_id: number
-
-
-  // @Column({ type: 'int', nullable: true })
-  // role_id: number
+  buyer_id: number | null
 
 }

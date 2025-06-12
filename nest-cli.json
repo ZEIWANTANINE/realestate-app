@@ -55,6 +55,15 @@
         "tsConfigPath": "libs/buyer_profile/tsconfig.lib.json"
       }
     },
+    "chat": {
+      "type": "library",
+      "root": "libs/chat",
+      "entryFile": "index",
+      "sourceRoot": "libs/chat/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/chat/tsconfig.lib.json"
+      }
+    },
     "common": {
       "type": "library",
       "root": "libs/common",
@@ -89,6 +98,15 @@
       "sourceRoot": "libs/favourite/src",
       "compilerOptions": {
         "tsConfigPath": "libs/favourite/tsconfig.lib.json"
+      }
+    },
+    "message": {
+      "type": "library",
+      "root": "libs/message",
+      "entryFile": "index",
+      "sourceRoot": "libs/message/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/message/tsconfig.lib.json"
       }
     },
     "nearby_place": {
@@ -161,6 +179,15 @@
       "sourceRoot": "libs/shared/src",
       "compilerOptions": {
         "tsConfigPath": "libs/shared/tsconfig.lib.json"
+      }
+    },
+    "transaction": {
+      "type": "library",
+      "root": "libs/transaction",
+      "entryFile": "index",
+      "sourceRoot": "libs/transaction/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/transaction/tsconfig.lib.json"
       }
     },
     "user": {

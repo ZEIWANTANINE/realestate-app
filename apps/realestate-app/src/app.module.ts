@@ -27,6 +27,9 @@ import { PropertyFeaturesModule } from '@app/property_features';
 import { PropertyFeatureController } from './property_feature/property_feature.controller';
 import { NearbyPlaceModule } from '@app/nearby_place';
 import { NearbyPlaceController } from './nearby_place/nearby_place.controller';
+import { TransactionModule } from '@app/transaction';
+import { TransactionController } from './transaction/transaction.controller';
+
 @Module({
   imports: [
     DatabaseModule,
@@ -42,7 +45,8 @@ import { NearbyPlaceController } from './nearby_place/nearby_place.controller';
     PropertyPriceHistoryModule,
     PropertyMediaModule,
     PropertyFeaturesModule,
-    NearbyPlaceModule
+    NearbyPlaceModule,
+    TransactionModule
   ],
   controllers: [
     UserController,
@@ -57,7 +61,8 @@ import { NearbyPlaceController } from './nearby_place/nearby_place.controller';
     PropertyPriceHistoryController,
     PropertyMediaController,
     PropertyFeatureController,
-    NearbyPlaceController
+    NearbyPlaceController,
+    TransactionController
   ],
   providers: [],
 })
