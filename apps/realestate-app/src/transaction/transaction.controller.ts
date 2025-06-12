@@ -4,17 +4,17 @@ import { VnpayPaymentDto } from '../transaction/transaction.dto';
 
 @Controller('transaction')
 export class TransactionController {
-  constructor(private readonly transactionService: TransactionService) {}
+  constructor(private readonly vnpayService: TransactionService) {}
 
   @Get('create')
   async create(@Query() dto: VnpayPaymentDto) {
-    const url = await this.transactionService.createPaymentUrl(dto);
+    const url = await this.vnpayService.createPaymentUrl(dto);
     return { paymentUrl: url };
   }
 
   @Get('return')
   async return(@Query() query: any) {
-    const result = await this.transactionService.handleVnpayReturn(query);
+    const result = await this.vnpayService.handleVnpayReturn(query);
     return {
       message: 'Transaction processed',
       status: result.status,
@@ -24,6 +24,6 @@ export class TransactionController {
 
   @Post('ipn') // nếu có hỗ trợ IPN từ server VNPAY
   async ipn(@Body() body: any) {
-    return this.transactionService.handleVnpayReturn(body);
+    return this.vnpayService.handleVnpayReturn(body);
   }
 }

@@ -10,10 +10,10 @@ export class TransactionService {
     constructor(private readonly transactionRepo: TransactionRepository) {}
 
   private readonly vnpConfig = {
-    tmnCode: 'YOUR_VNPAY_TMN_CODE',
-    secretKey: 'YOUR_VNPAY_SECRET_KEY',
+    tmnCode: 'VNPAY_TMN_CODE',
+    secretKey: 'VNPAY_SECRET_KEY',
     vnpUrl: 'https://sandbox.vnpayment.vn/paymentv2/vpcpay.html',
-    returnUrl: 'http://localhost:3000/transaction/return',
+    returnUrl: 'http://localhost:3000/vnpay/return',
   };
 
   async createPaymentUrl(dto: VnpayPaymentDto): Promise<string> {
