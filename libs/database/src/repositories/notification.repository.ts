@@ -22,8 +22,8 @@ export class NotificationRepository {
     page: number
     size: number
     user_id?: number
-    is_read?: boolean
     type?: string
+    is_read?: boolean
   }) {
     const query = this.repository
       .createQueryBuilder('notifications')
@@ -32,11 +32,11 @@ export class NotificationRepository {
     if (params.user_id) {
       query.andWhere('notifications.user_id = :user_id', { user_id: params.user_id })
     }
-    if (typeof params.is_read === 'boolean') {
-      query.andWhere('notifications.is_read = :is_read', { is_read: params.is_read })
-    }
     if (params.type) {
       query.andWhere('notifications.type = :type', { type: params.type })
+    }
+    if (params.is_read !== undefined) {
+      query.andWhere('notifications.is_read = :is_read', { is_read: params.is_read })
     }
 
     query
@@ -67,5 +67,12 @@ export class NotificationRepository {
 
   async softDelete(id: number): Promise<void> {
     await this.repository.softDelete(id)
+  }
+
+  async markAsRead(id: number): Promise<void> {
+    await this.repository.update(id, {
+      is_read: true,
+      read_at: new Date(),
+    })
   }
 }

@@ -55,15 +55,6 @@
         "tsConfigPath": "libs/buyer_profile/tsconfig.lib.json"
       }
     },
-    "chat": {
-      "type": "library",
-      "root": "libs/chat",
-      "entryFile": "index",
-      "sourceRoot": "libs/chat/src",
-      "compilerOptions": {
-        "tsConfigPath": "libs/chat/tsconfig.lib.json"
-      }
-    },
     "common": {
       "type": "library",
       "root": "libs/common",
@@ -80,6 +71,24 @@
       "sourceRoot": "libs/company/src",
       "compilerOptions": {
         "tsConfigPath": "libs/company/tsconfig.lib.json"
+      }
+    },
+    "conversation": {
+      "type": "library",
+      "root": "libs/conversation",
+      "entryFile": "index",
+      "sourceRoot": "libs/conversation/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/conversation/tsconfig.lib.json"
+      }
+    },
+    "conversation_participant": {
+      "type": "library",
+      "root": "libs/conversation_participant",
+      "entryFile": "index",
+      "sourceRoot": "libs/conversation_participant/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/conversation_participant/tsconfig.lib.json"
       }
     },
     "database": {
@@ -107,6 +116,15 @@
       "sourceRoot": "libs/message/src",
       "compilerOptions": {
         "tsConfigPath": "libs/message/tsconfig.lib.json"
+      }
+    },
+    "message_read": {
+      "type": "library",
+      "root": "libs/message_read",
+      "entryFile": "index",
+      "sourceRoot": "libs/message_read/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/message_read/tsconfig.lib.json"
       }
     },
     "nearby_place": {
@@ -197,15 +215,6 @@
       "sourceRoot": "libs/user/src",
       "compilerOptions": {
         "tsConfigPath": "libs/user/tsconfig.lib.json"
-      }
-    },
-    "viewing": {
-      "type": "library",
-      "root": "libs/viewing",
-      "entryFile": "index",
-      "sourceRoot": "libs/viewing/src",
-      "compilerOptions": {
-        "tsConfigPath": "libs/viewing/tsconfig.lib.json"
       }
     }
   }

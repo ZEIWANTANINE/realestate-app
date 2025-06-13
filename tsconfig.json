@@ -60,6 +60,18 @@
       "@app/company/*": [
         "libs/company/src/*"
       ],
+      "@app/conversation": [
+        "libs/conversation/src"
+      ],
+      "@app/conversation/*": [
+        "libs/conversation/src/*"
+      ],
+      "@app/conversation_participant": [
+        "libs/conversation_participant/src"
+      ],
+      "@app/conversation_participant/*": [
+        "libs/conversation_participant/src/*"
+      ],
       "@app/database": [
         "libs/database/src"
       ],
@@ -73,10 +85,18 @@
         "libs/favourite/src/*"
       ],
       "@app/message": [
+        "libs/message/src",
         "libs/message/src"
       ],
       "@app/message/*": [
+        "libs/message/src/*",
         "libs/message/src/*"
+      ],
+      "@app/message_read": [
+        "libs/message_read/src"
+      ],
+      "@app/message_read/*": [
+        "libs/message_read/src/*"
       ],
       "@app/nearby_place": [
         "libs/nearby_place/src"

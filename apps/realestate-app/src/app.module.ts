@@ -29,6 +29,15 @@ import { NearbyPlaceModule } from '@app/nearby_place';
 import { NearbyPlaceController } from './nearby_place/nearby_place.controller';
 import { TransactionModule } from '@app/transaction';
 import { TransactionController } from './transaction/transaction.controller';
+import { ConversationModule } from '@app/conversation';
+import { ConversationParticipantModule } from '@app/conversation_participant';
+import { MessageModule } from '@app/message';
+import { MessageReadModule } from '@app/message_read';
+import { ConversationController } from './conversation/conversation.controller';
+import { ConversationParticipantController } from './conversation_participant/conversation_participant.controller';
+import { MessageController } from './message/message.controller';
+import { MessageReadController } from './message_read/message_read.controller';
+
 
 @Module({
   imports: [
@@ -46,7 +55,11 @@ import { TransactionController } from './transaction/transaction.controller';
     PropertyMediaModule,
     PropertyFeaturesModule,
     NearbyPlaceModule,
-    TransactionModule
+    TransactionModule,
+    ConversationModule,
+    ConversationParticipantModule,
+    MessageModule,
+    MessageReadModule
   ],
   controllers: [
     UserController,
@@ -62,7 +75,11 @@ import { TransactionController } from './transaction/transaction.controller';
     PropertyMediaController,
     PropertyFeatureController,
     NearbyPlaceController,
-    TransactionController
+    TransactionController,
+    ConversationController,
+    ConversationParticipantController,
+    MessageController,
+    MessageReadController
   ],
   providers: [],
 })

@@ -1,8 +1,20 @@
 import { MigrationInterface, QueryRunner, Table, TableForeignKey } from "typeorm";
 
-export class CreateMessageTables1749134880397 implements MigrationInterface {
+export class CreateMessageTables1749134110397 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
+        // Kiểm tra bảng conversations đã tồn tại chưa
+        const conversationsTableExists = await queryRunner.hasTable('conversations');
+        if (!conversationsTableExists) {
+            throw new Error('Conversations table does not exist. Please run CreateConversationTables migration first.');
+        }
+
+        // Kiểm tra bảng users đã tồn tại chưa
+        const usersTableExists = await queryRunner.hasTable('users');
+        if (!usersTableExists) {
+            throw new Error('Users table does not exist. Please run CreateUsersTable migration first.');
+        }
+
         await queryRunner.createTable(
                     new Table({
                       name: 'messages',

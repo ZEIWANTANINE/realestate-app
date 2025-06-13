@@ -6,7 +6,7 @@ export class AddConversationParticipantForeignKeys1749201058531 implements Migra
         // Add foreign key for 'conversation_id' referencing 'conversations' table
         await queryRunner.createForeignKey('conversation_participants',
             new TableForeignKey({
-                columnNames: ['converstion_id'], // Lưu ý: có thể là lỗi chính tả, nên là 'conversation_id'
+                columnNames: ['conversation_id'], 
                 referencedTableName: 'conversations',
                 referencedColumnNames: ['id'],
                 onDelete: 'SET NULL',
