@@ -11,4 +11,5 @@ export interface ICreateInfo {
   email: string
   password?: string
   role: USER_ROLE
+  name?: string
 }

@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common'
+import { Injectable, NotFoundException } from '@nestjs/common'
 import { InjectRepository } from '@nestjs/typeorm'
 import { IsNull, Repository } from 'typeorm'
 import { PropertiesEntity } from '../entities/properties.entity'
@@ -64,8 +64,13 @@ export class PropertyRepository {
     })
   }
 
-  async update(id: number, data: Partial<PropertiesEntity>): Promise<void> {
+  async update(id: number, data: Partial<PropertiesEntity>): Promise<PropertiesEntity> {
     await this.repository.update(id, data)
+    const updatedProperty = await this.findById(id)
+    if (!updatedProperty) {
+      throw new NotFoundException(`Property with id ${id} not found after update`)
+    }
+    return updatedProperty
   }
 
   async softDelete(id: number): Promise<void> {

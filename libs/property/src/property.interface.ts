@@ -44,8 +44,10 @@ export interface IUpdateProperty {
   is_active?: boolean
 }
 
-export interface ICreateProperty {
+export interface IFindAllProperty {
   page?: number
   size?: number
   key?: string
+  agent_id?: number
+  company_id?: number
 }

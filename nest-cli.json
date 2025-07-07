@@ -109,6 +109,15 @@
         "tsConfigPath": "libs/favourite/tsconfig.lib.json"
       }
     },
+    "googlemap": {
+      "type": "library",
+      "root": "libs/googlemap",
+      "entryFile": "index",
+      "sourceRoot": "libs/googlemap/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/googlemap/tsconfig.lib.json"
+      }
+    },
     "message": {
       "type": "library",
       "root": "libs/message",

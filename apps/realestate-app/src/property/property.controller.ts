@@ -3,7 +3,6 @@ import { plainToInstance } from 'class-transformer'
 import { CreatePropertyDto, PropertyResponseDto, UpdatePropertyDto } from './property.dto'
 import { PropertyService } from '@app/property'
 
-
 @Controller('property')
 export class PropertyController {
   constructor(private readonly propertyService: PropertyService) {}

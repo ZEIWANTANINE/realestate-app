@@ -84,6 +84,12 @@
       "@app/favourite/*": [
         "libs/favourite/src/*"
       ],
+      "@app/googlemap": [
+        "libs/googlemap/src"
+      ],
+      "@app/googlemap/*": [
+        "libs/googlemap/src/*"
+      ],
       "@app/message": [
         "libs/message/src",
         "libs/message/src"

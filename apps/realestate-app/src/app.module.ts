@@ -1,5 +1,6 @@
 import { UserModule } from '@app/user';
 import { MiddlewareConsumer, Module, RequestMethod } from '@nestjs/common';
+import { ConfigModule } from '@nestjs/config';
 import { UserController } from './user/user.controller';
 import { DatabaseModule } from '@app/database';
 import { SanitizePathMiddleware } from '../sanitize.path-middleware';
@@ -37,10 +38,16 @@ import { ConversationController } from './conversation/conversation.controller';
 import { ConversationParticipantController } from './conversation_participant/conversation_participant.controller';
 import { MessageController } from './message/message.controller';
 import { MessageReadController } from './message_read/message_read.controller';
-
+import { AuthModule } from '@app/auth';
+import { AuthController } from './auth/auth.controller';
+import { GooglemapModule } from '@app/googlemap';
+import { GooglemapController } from './google-maps/googlemap.controller';
 
 @Module({
   imports: [
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
     DatabaseModule,
     UserModule,
     BuyerProfileModule,
@@ -59,7 +66,9 @@ import { MessageReadController } from './message_read/message_read.controller';
     ConversationModule,
     ConversationParticipantModule,
     MessageModule,
-    MessageReadModule
+    MessageReadModule,
+    AuthModule,
+    GooglemapModule
   ],
   controllers: [
     UserController,
@@ -79,7 +88,9 @@ import { MessageReadController } from './message_read/message_read.controller';
     ConversationController,
     ConversationParticipantController,
     MessageController,
-    MessageReadController
+    MessageReadController,
+    AuthController,
+    GooglemapController
   ],
   providers: [],
 })
